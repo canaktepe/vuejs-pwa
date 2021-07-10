@@ -3,7 +3,7 @@
     version :
     <p v-if="version">{{ version }}</p>
     <div v-if="updateExists">
-      An update is available <span v-if="version">({{ version }})</span>
+      An update is available
       <button @click="refreshApp">Update</button>
     </div>
   </div>
