@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    version:aa
+    version:
     <p v-if="process">{{ process.env.VUE_APP_VERSION }}</p>
     <div v-if="updateExists">
       An update is available <span v-if="process">({{ process.env.VUE_APP_VERSION }})</span>
