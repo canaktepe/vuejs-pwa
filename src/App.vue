@@ -1,9 +1,9 @@
 <template>
   <div id="app">
     version :
-    <p v-if="process">{{ process.env.VUE_APP_VERSION }}</p>
+    <p v-if="version">{{ version }}</p>
     <div v-if="updateExists">
-      An update is available <span v-if="process">({{ process.env.VUE_APP_VERSION }})</span>
+      An update is available <span v-if="version">({{ version }})</span>
       <button @click="refreshApp">Update</button>
     </div>
   </div>
@@ -32,6 +32,11 @@ export default {
       // Here the actual reload of the page occurs
       window.location.reload();
     });
+  },
+  computed: {
+    version() {
+      return process.env.VUE_APP_VERSION;
+    },
   },
   methods: {
     updateAvailable(event) {

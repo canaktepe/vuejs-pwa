@@ -10,12 +10,11 @@ if (process.env.NODE_ENV === 'production') {
         'For more details, visit https://goo.gl/AFskqB'
       )
     },
-    // eslint-disable-next-line no-unused-vars
     registered (registration) {
       console.log('Service worker has been registered.')
-      // setInterval(() => {
-			// 	registration.update();
-			// }, 1000 * 10); // minutely checks
+      setInterval(() => {
+				registration.update();
+			}, 1000 * 10); // minutely checks
     },
     cached () {
       console.log('Content has been cached for offline use.')
